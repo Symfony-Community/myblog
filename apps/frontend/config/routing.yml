@@ -1,0 +1,36 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+contactenos:
+  url:   /contactenos
+  param: { module: content, action: contactenos }
+
+quienes_somos:
+  url:   /quienes-somos
+  param: { module: content, action: quienesSomos }
+
+posts:
+  url:   /posts
+  param: { module: post, action: index }
+
+post_detail:
+  url:   /post-detalle/:slug
+  param: { module: post, action: detalle }
+
+post_nuevo:
+  url:   /post-nuevo
+  param: { module: post, action: nuevo }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: content, action: home }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

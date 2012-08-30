@@ -1,0 +1,48 @@
+Post:
+  tableName: post
+  actAs: 
+    Sluggable:
+      fields: [titulo]
+      unique: true
+    Timestampable: ~
+  columns:    
+    nombre:                         
+      type: string(255)
+      notnull: true
+    email:                         
+      type: string(255)
+      notnull: true
+    titulo:                         
+      type: string(255)
+      notnull: true
+    tipo:
+      type: enum
+      values: ['Programación','Gestion Servidores', 'Other']
+      notnull: true
+    fecha:
+      type: timestamp
+    descripcion:                   
+      type: clob
+    es_activo:
+      type: boolean
+      default: true
+
+Comment:
+  tableName: comment
+  actAs:
+    Timestampable: ~
+  options:
+    type: INNODB
+    collate: utf8_general_ci
+    charset: utf8
+  columns:
+    post_id:
+      type: integer
+    contenido:
+      type: text(1000)
+  relations:
+    Post:
+      class: Post
+      foreign: id
+      foreignAlias: Comments
+      local: post_id
