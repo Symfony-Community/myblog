@@ -40,6 +40,8 @@ Comment:
       type: integer
     contenido:
       type: text(1000)
+    email:
+      type: text(255)
   relations:
     Post:
       class: Post

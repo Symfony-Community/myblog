@@ -5,6 +5,10 @@ contactenos:
   url:   /contactenos
   param: { module: content, action: contactenos }
 
+contactenos_enviar:
+  url:   /contactenos/enviar
+  param: { module: content, action: contactenosEnviar }
+
 quienes_somos:
   url:   /quienes-somos
   param: { module: content, action: quienesSomos }
